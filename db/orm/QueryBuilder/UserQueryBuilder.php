@@ -1,13 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 5/12/2015
- * Time: 10:24 μμ
- */
-
-
-
 class UserQueryBuilder {
     private $dBName;
     public function __construct() {

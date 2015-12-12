@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 4/12/2015
- * Time: 5:29 μμ
- */
-
 class DBSettings {
     private $file = 'db/connection/properties.json';
     private $dbProperties;

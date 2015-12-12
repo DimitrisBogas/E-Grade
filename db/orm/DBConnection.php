@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 5/12/2015
- * Time: 8:39 μμ
- */
 include 'db/connection/DBSettings.php';
 
 class DBConnection {
