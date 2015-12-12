@@ -1,2 +1,9 @@
-{"connectionName":"default","host":"localhost","port":"3306","username":"root","password":"", "dBName":"3163_3362_3374"}
+{
+  "connectionName": "default",
+  "host": "localhost",
+  "port": "3306",
+  "username": "root",
+  "password": "",
+  "dbName": "3163_3362_3374"
+}
 
