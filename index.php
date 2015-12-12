@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
 <?php
 // include 'db/connection/DBSettings.php';
+include 'pages/header.php';
 include 'db/orm/DBConnection.php';
 include 'db/orm/QueryBuilder/UserQueryBuilder.php';
 
-echo "E-Grade Project </br>";
+echo "E-Grade Project <br>";
+include 'pages/login.php';
+
 $dBConnection = new DBConnection();
 $userQueryBuilder = new UserQueryBuilder();
 $result = $dBConnection->query($userQueryBuilder->showUsers());
@@ -25,6 +21,5 @@ echo "$result </br>";
 //  echo $userQueryBuilder->createSecretariat();
 //  echo $result;
 // print_r($obj);
+include 'pages/footer.php';
 ?>
-</body>
-</html>
