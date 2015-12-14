@@ -1,18 +1,18 @@
 <?php
 class UserTypes {
-    function administrator () {
+    public static function administrator () {
         return "ADMINISTRATOR";
     }
     
-    function secretariat () {
+    public static function secretariat () {
         return "SECRETARY";
     }
     
-    function professor () {
+    public static function professor () {
         return "PROFESSOR";
     }
     
-    function student () {
+    public static function student () {
         return "STUDENT";
     }
 }

@@ -8,30 +8,25 @@ class UserQueryBuilder {
         $db = new DBSettings();
         $dbSettings = $db->getDbSettings();
         $this->dbName = $dbSettings->dbName;
-        $this->userType = new UserTypes();
     }
     public function createSecretariat($user, $password) {
-     $userType = $this->userType->secretariat();
-        return ("INSERT INTO $this->dbName.users (user.username, user.password, user.usertype) VALUES ('$user', '$password', '$userType')");
+        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::secretariat() . "'". ")");
     }
 
     public function createStudent ($user, $password) {
-     $userType = $this->userType->student();
-        return ("INSERT INTO $this->dbName.users (user.username, user.password, user.usertype) VALUES ('$user', '$password', '$userType')");
+        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::student() . "'". ")");
     }
 
      public function createProfessor ($user, $password) {
-     $userType = $this->userType->professor();
-         return ("INSERT INTO $this->dbName.users (user.username, user.password, user.usertype) VALUES ('$user', '$password', '$userType')");
+         return ("INSERT INTO $this->dbName.users  (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::professor() . "'". ")");
     }
 
     public function createAdministrator ($user, $password) {
-     $userType = $this->userType->administrator();
-        return ("INSERT INTO $this->dbName.users (user.username, user.password, user.usertype) VALUES ('$user', '$password', '$userType')");
+        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::administrator() . "'". ")");
     }
  
-    public function showUsers() {
-        return("select * from users");
+    public function selectAllUsers() {
+        return("select * from  $this->dbName.users");
     }
 
     public function login($username, $password)

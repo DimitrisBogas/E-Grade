@@ -11,8 +11,8 @@
       <table id="2" parent="1" name="departments"/>
       <table id="3" parent="1" name="universities"/>
       <table id="4" parent="1" name="users"/>
-      <table id="5" parent="1" name="departments_has_users"/>
-      <table id="6" parent="1" name="universities_has_departments"/>
+      <table id="5" parent="1" name="departments_have_users"/>
+      <table id="6" parent="1" name="universities_have_departments"/>
       <column id="7" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
