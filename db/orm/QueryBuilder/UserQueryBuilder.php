@@ -1,5 +1,6 @@
 <?php
-include 'db/orm/QueryBuilder/UserTypes.php';
+include 'UserTypes.php';
+include 'db/connection/DBSettings.php';
 
 class UserQueryBuilder {
     private  $userType;
