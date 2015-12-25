@@ -12,12 +12,17 @@ namespace controllers;
 
 class SessionController
 {
-    public function __construct($userType) {
-        if ($userType =="") if(!self::exists()) self::startGuestSession();
+    public function __construct() {
+        session_start();
+        if (session_name() == "guest") {
+            $_SESSION['username'] = "u";
+            $_SESSION['password'] = "p";
+        }
+/*        if ($userType =="") self::startGuestSession();
         else {
             if($userType == \UserTypes::student())
                 self::startGuestSession();
-        }
+        }*/
     }
     public static function exists() {
         if(isset($_SESSION)) return true;
@@ -25,17 +30,20 @@ class SessionController
     }
     public static function startGuestSession() {
         session_name("guest");
-        session_start();
+        $_SESSION['username'] = "u";
+        $_SESSION['password'] = "p";
     }
     public static function startStudentSession() {
-        if(isset($_SESSION)) {
-            session_destroy();
-            session_name("student");
-            session_start();
-        }
+        session_name(\UserTypes::student());
+
     }
-    public static function closeSession($user) {
-        session_unset($_SESSION['$user']);
+    public function  closeGuestSession() {
+        session_unset($_SESSION);
+     //   session_destroy();
+     //   session_write_close();
+    }
+    public function closeUserSession() {
+        session_unset($_SESSION);
         session_destroy();
 
     }

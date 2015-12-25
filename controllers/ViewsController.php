@@ -12,30 +12,23 @@ include('AuthenticationController.php') ;
 class ViewsController
 {
     private $authenticationController;
-    private $sessionController;
+
     public function __construct()  {
         $this->authenticationController = new \controllers\AuthenticationController();
     }
 
     public function invoke() {
         if(session_name() == "guest") {
+           // $this->authenticationController->logoutUser();
             include 'views/login.php';
-            echo session_id() . " " . session_name() ;
-            if ($this->authenticationController->isValidUser($_SESSION['username'],$_SESSION['password'])) {
-                echo "Welcome user";
-                $this->sessionController = new \controllers\SessionController(UserTypes::student());
-                \controllers\SessionController::closeSession("guest");
-                $_SERVER['QUERY_STRING'] = "&=" . UserTypes::student();
-                \controllers\SessionController::startStudentSession(UserTypes::student());
-                header( "refresh:5;url=index.php". $_SERVER['QUERY_STRING'] );
+            echo "</br>" .session_id() . " " . session_name() . "</br>";
 
-            }
-            echo $_SESSION['password'];
-        } else if ($this->authenticationController->isValidUser($_SESSION['username'],$_SESSION['password'])) {
+            echo  $_SESSION['username'] . "   ". $_SESSION['password'];
 
-            echo "Welcome student !";
-
+        } else if (session_name() == UserTypes::student() && $this->authenticationController->isValidUser()) {
+            include 'views/StudentView.php';
         }
+
     }
     public function invokeRedirect() {
         include 'views/Redirect.php';

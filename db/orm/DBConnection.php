@@ -1,5 +1,5 @@
 <?php
-include_once '../db/connection/DBSettings.php';
+include_once (__DIR__.'./../connection/DBSettings.php');
 
 class DBConnection {
     private $dbSettings;

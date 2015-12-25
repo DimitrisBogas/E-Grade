@@ -32,9 +32,8 @@ class UserQueryBuilder {
 
     public function login($username, $password)
     {
-        $query = "select username, password from users where username = $username and password = $password";
-        //return null;
+        return("SELECT * from $this->dbName.users  where username like '$username' AND password like '$password' ");
     }
 
 
-    }
+}

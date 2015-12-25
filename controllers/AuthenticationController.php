@@ -10,53 +10,32 @@ namespace controllers;
 
 use UserQueryBuilder;
 
+include_once('SessionController.php');
 include ('db/orm/QueryBuilder/UserQueryBuilder.php');
+include_once(__DIR__.'../../db/orm/DBConnection.php');
 
 class AuthenticationController
 {
     private $userQueryBuilder;
-    private $username;
-    private $password;
+    private $dBConnection;
+    private $sessionController;
     public function __construct() {
         $this->userQueryBuilder = new UserQueryBuilder();
-        if (isset($_POST['action'])) {
-            switch ($_POST['action']) {
-                case 'getUserCredentials':
-                    $this->getUserCredentials();
-                    break;
-            }
-        }
+        $this->sessionController = new SessionController();
+        $this->dBConnection = new \DBConnection();
+        if (( isset($_SESSION['username']) && isset($_SESSION['password'])  )) {
+                if(self::isValidUser())  {
+                    $this->sessionController->startStudentSession();
+                    $result = $this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password']);
+                    $result = $this->dBConnection->query($result);
+                } else $this->sessionController->startGuestSession();
 
+        } else $this->sessionController->startGuestSession();
     }
-    public function clickFunction(){
-        $array = array(
-        'status'  => '1');
-        return $array;
-    }
-    public function getUserCredentials(){
-        if (isset($_POST["username"]) && isset($_POST["password"]) ) {
-            $this->username = $_POST["username"];
-            $this->password = $_POST["password"];
-            echo "username: " . $this->username . "</br>" . "password: " . $this->password;
-
-        }
-        else echo "error ";
-
-    }
-    public function login($username, $password) {
-        if ($username == "user" && $password == "user") return true;
+    public function isValidUser() {
+        $row = mysql_fetch_assoc($this->dBConnection->query($this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password'])));
+        if(  ($row['username']==$_SESSION['username'] && $row['password'] == $_SESSION['password'] )  ) return true;
         else return false;
-
-    }
-    public static function isValidUser($username, $password) {
-        if($username == "user" && $password =="user")
-        return true;
-
-    }
-    public static function check() {
-        if(isset($_SESSION)) return true;
-        else return false;
-
     }
 
 
