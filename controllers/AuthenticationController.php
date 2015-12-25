@@ -25,17 +25,32 @@ class AuthenticationController
         $this->dBConnection = new \DBConnection();
         if (( isset($_SESSION['username']) && isset($_SESSION['password'])  )) {
                 if(self::isValidUser())  {
-                    $this->sessionController->startStudentSession();
+                    self::setSessionType();
                     $result = $this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password']);
                     $result = $this->dBConnection->query($result);
                 } else $this->sessionController->startGuestSession();
 
         } else $this->sessionController->startGuestSession();
     }
-    public function isValidUser() {
-        $row = mysql_fetch_assoc($this->dBConnection->query($this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password'])));
-        if(  ($row['username']==$_SESSION['username'] && $row['password'] == $_SESSION['password'] )  ) return true;
-        else return false;
+    public function isValidUser($userType = NULL) {
+        if (empty($userType)) $userType = null;
+        $user = self::retrieveUserFromPersistence();
+        if (empty($userType)) {
+            if (($user['username'] == $_SESSION['username'] && $user['password'] == $_SESSION['password'])) return true;
+            else return false;
+        }
+        else if (!empty($userType)) {
+            if (($user['username']==$_SESSION['username'] && $user['password'] == $_SESSION['password'] && $userType == $user['userType'] )) return true;
+            else return false;
+        }
+        }
+    private function retrieveUserFromPersistence() {
+        return(mysql_fetch_assoc($this->dBConnection->query($this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password']))));
+    }
+    private function setSessionType() {
+        $user = self::retrieveUserFromPersistence();
+        if($user['userType'] == \UserTypes::student()) $this->sessionController->startStudentSession();
+        if($user['userType'] == \UserTypes::secretariat()) $this->sessionController->startSecretariatSession();
     }
 
 

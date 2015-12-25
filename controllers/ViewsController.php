@@ -20,13 +20,16 @@ class ViewsController
     public function invoke() {
         if(session_name() == "guest") {
            // $this->authenticationController->logoutUser();
-            include 'views/login.php';
+            include 'views/LoginView.php';
             echo "</br>" .session_id() . " " . session_name() . "</br>";
 
             echo  $_SESSION['username'] . "   ". $_SESSION['password'];
 
-        } else if (session_name() == UserTypes::student() && $this->authenticationController->isValidUser()) {
+        } else if (session_name() == UserTypes::student() && $this->authenticationController->isValidUser(UserTypes::student())) {
             include 'views/StudentView.php';
+        } else if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
+            include 'views/SecretaryView.php';
+
         }
 
     }

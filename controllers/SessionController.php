@@ -35,7 +35,9 @@ class SessionController
     }
     public static function startStudentSession() {
         session_name(\UserTypes::student());
-
+    }
+    public static function startSecretariatSession() {
+        session_name(\UserTypes::secretariat());
     }
     public function  closeGuestSession() {
         session_unset($_SESSION);

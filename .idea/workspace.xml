@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346681e1-e47c-4750-9256-1dd3ab809978" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/SubmitController.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/studen.php" afterPath="$PROJECT_DIR$/views/StudentView.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login.php" afterPath="$PROJECT_DIR$/views/LoginView.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/secretary.php" afterPath="$PROJECT_DIR$/views/SecretaryView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/db.mwb" afterPath="$PROJECT_DIR$/db/db.mwb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/AuthenticationController.php" afterPath="$PROJECT_DIR$/controllers/AuthenticationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SessionController.php" afterPath="$PROJECT_DIR$/controllers/SessionController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ViewsController.php" afterPath="$PROJECT_DIR$/controllers/ViewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orm/DBConnection.php" afterPath="$PROJECT_DIR$/db/orm/DBConnection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" afterPath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.php" afterPath="$PROJECT_DIR$/views/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template/header.php" afterPath="$PROJECT_DIR$/views/template/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/create.sql" afterPath="$PROJECT_DIR$/db/create.sql" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +51,8 @@
       <file leaf-file-name="SessionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/SessionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.708334">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
               </folding>
@@ -64,21 +60,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/AuthenticationController.php">
+      <file leaf-file-name="loginVerification.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/loginVerification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.083333">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/StudentView.php">
+      <file leaf-file-name="AuthenticationController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/AuthenticationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25">
-              <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+            <state vertical-scroll-proportion="1.1311189">
+              <caret line="52" column="111" selection-start-line="52" selection-start-column="111" selection-end-line="52" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTypes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserTypes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -87,8 +93,18 @@
       <file leaf-file-name="ViewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ViewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.083333">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.458333">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecretaryView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/SecretaryView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -119,8 +135,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.php">
+      <file leaf-file-name="LoginView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/LoginView.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.75">
               <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
@@ -139,21 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBConnection.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBConnection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/orm/DBConnection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15734266">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -199,11 +205,12 @@
         <option value="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" />
         <option value="$PROJECT_DIR$/views/template/header.php" />
         <option value="$PROJECT_DIR$/js/login.js" />
-        <option value="$PROJECT_DIR$/controllers/SessionController.php" />
         <option value="$PROJECT_DIR$/views/StudentView.php" />
         <option value="$PROJECT_DIR$/views/login.php" />
         <option value="$PROJECT_DIR$/controllers/ViewsController.php" />
+        <option value="$PROJECT_DIR$/controllers/SessionController.php" />
         <option value="$PROJECT_DIR$/controllers/AuthenticationController.php" />
+        <option value="$PROJECT_DIR$/views/SecretaryView.php" />
       </list>
     </option>
   </component>
@@ -539,28 +546,34 @@
       <option name="project" value="LOCAL" />
       <updated>1450691944853</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added login using sessions">
+      <created>1451043843584</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1451043843584</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="24" width="1364" height="746" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16843702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10622155" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22311397" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16843702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10622155" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -588,7 +601,8 @@
     <MESSAGE value="deleted bak" />
     <MESSAGE value="adding users fix" />
     <MESSAGE value="added sessions capability" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sessions capability" />
+    <MESSAGE value="added login using sessions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login using sessions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -613,10 +627,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/secretary.php">
+    <entry file="file://$PROJECT_DIR$/views/SecretaryView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,10 +714,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/secretary.php">
+    <entry file="file://$PROJECT_DIR$/views/SecretaryView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -852,13 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/secretary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -907,7 +916,7 @@
         <state vertical-scroll-proportion="-5.0">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="e#6#88#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -924,14 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserTypes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -968,14 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.375">
@@ -999,36 +992,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ViewsController.php">
+    <entry file="file://$PROJECT_DIR$/db/orm/DBConnection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.083333">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/AuthenticationController.php">
+    <entry file="file://$PROJECT_DIR$/views/loginVerification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.083333">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LoginView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserTypes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/SecretaryView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ViewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.458333">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SessionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.708334">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/orm/DBConnection.php">
+    <entry file="file://$PROJECT_DIR$/controllers/AuthenticationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15734266">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state vertical-scroll-proportion="1.1311189">
+          <caret line="52" column="111" selection-start-line="52" selection-start-column="111" selection-end-line="52" selection-end-column="111" />
           <folding />
         </state>
       </provider>
