@@ -39,6 +39,9 @@ class SessionController
     public static function startSecretariatSession() {
         session_name(\UserTypes::secretariat());
     }
+    public static function startAdministratorSession() {
+        session_name(\UserTypes::administrator());
+    }
     public function  closeGuestSession() {
         session_unset($_SESSION);
      //   session_destroy();
@@ -46,7 +49,7 @@ class SessionController
     }
     public function closeUserSession() {
         session_unset($_SESSION);
-        session_destroy();
+       // session_destroy();
 
     }
 

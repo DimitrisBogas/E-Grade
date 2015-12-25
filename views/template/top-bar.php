@@ -7,12 +7,3 @@
         <li  style="float: right;"><a href='#'>Logout<span></span></a></li>
     </ul>
 </div>
-
-<?php
-
-echo " </br> Welcome ....";
-
-$this->authenticationController->display();
-
-include'Logout.php';
-?>

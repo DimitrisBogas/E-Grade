@@ -51,7 +51,13 @@ class AuthenticationController
         $user = self::retrieveUserFromPersistence();
         if($user['userType'] == \UserTypes::student()) $this->sessionController->startStudentSession();
         if($user['userType'] == \UserTypes::secretariat()) $this->sessionController->startSecretariatSession();
+        if($user['userType'] == \UserTypes::administrator()) $this->sessionController->startAdministratorSession();
     }
-
+    public function display() {
+        echo "file";
+    }
+    public function logout() {
+        $this->sessionController->closeUserSession();
+    }
 
 }
