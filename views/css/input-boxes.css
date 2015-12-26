@@ -1,0 +1,12 @@
+.universityName {
+    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+    border: 5px darkblue solid;
+    color: darkblue;
+    margin-left: 8%;
+    margin-right: 10%;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+}

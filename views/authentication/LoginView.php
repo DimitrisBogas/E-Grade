@@ -1,7 +1,11 @@
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="views/css/login.css">
 <script type="text/javascript">
 </script>
+
     <div class="login-card">
+        <?php
+            include (__DIR__.'../../template/alert-box.php');
+        ?>
         <h1> E-Grade Log-in</h1><br>
         <form action=""  method="post">
             Username:<input type="text" name="username" id="username"  placeholder="Username"><br>
@@ -10,7 +14,7 @@
         </form>
         <?php
         echo "Session id: " . session_id() . "</br>". " Session name:" . session_name() . "</br>";
-        echo  "Session: username: " . $_SESSION['username'] . "</br>" ." Session Password: ". $_SESSION['password'];
+        if(isset($_SESSION['username']) && isset($_SESSION['password'])) echo  "Session: username: " . $_SESSION['username'] . "</br>" ." Session Password: ". $_SESSION['password'];
 
         ?>
     </div>
@@ -21,8 +25,9 @@ if (!((isset($_POST['username']) && isset($_POST['password'])))) {
 } else {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
-    header("Location: http://{$_SERVER['SERVER_NAME']}/");
-    die();
+    unserialize($_POST);
+    include(__DIR__.'../../Redirect.php');
+    Redirect::toHome();
 }
 
 ?>

@@ -14,15 +14,7 @@ class SessionController
 {
     public function __construct() {
         session_start();
-        if (session_name() == "guest") {
-            $_SESSION['username'] = "u";
-            $_SESSION['password'] = "p";
-        }
-/*        if ($userType =="") self::startGuestSession();
-        else {
-            if($userType == \UserTypes::student())
-                self::startGuestSession();
-        }*/
+        $_SESSION['errors'] = array();
     }
     public static function exists() {
         if(isset($_SESSION)) return true;
@@ -30,8 +22,6 @@ class SessionController
     }
     public static function startGuestSession() {
         session_name("guest");
-        $_SESSION['username'] = "u";
-        $_SESSION['password'] = "p";
     }
     public static function startStudentSession() {
         session_name(\UserTypes::student());
