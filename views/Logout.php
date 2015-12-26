@@ -8,5 +8,8 @@
 if($_GET) {
     if($_GET['c'] == "logout") {
         $this->authenticationController->logout();
+        header("Location: http://{$_SERVER['SERVER_NAME']}/");
+        die();
+
     }
 }

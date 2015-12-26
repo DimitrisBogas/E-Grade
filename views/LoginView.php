@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="css/login.css">
+<script type="text/javascript">
+</script>
     <div class="login-card">
         <h1> E-Grade Log-in</h1><br>
         <form action=""  method="post">
             Username:<input type="text" name="username" id="username"  placeholder="Username"><br>
             Password:<input type="password" name="password" id="password" placeholder="Password"><br>
-            <input type="submit"  name="login" class="login login-submit" value="Sign In"  onclick="clearform();">
+            <input type="submit"  name="login" class="login login-submit" value="Sign In">
         </form>
         <?php
         echo "Session id: " . session_id() . "</br>". " Session name:" . session_name() . "</br>";
@@ -19,6 +21,8 @@ if (!((isset($_POST['username']) && isset($_POST['password'])))) {
 } else {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
+    header("Location: http://{$_SERVER['SERVER_NAME']}/");
+    die();
 }
 
 ?>
