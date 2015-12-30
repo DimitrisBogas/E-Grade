@@ -6,12 +6,12 @@
 <input type="submit"  name="addUniversity" class="button" value="Add a University">
 </form>
 <?php
-
+include_once(__DIR__.'../../../Redirect.php');
 if (!(isset($_POST['universityName']))) {
     $_POST['universityName'] = "u";
 } else {
     $_SESSION['universityName'] = $_POST['universityName'];
- //   include(__DIR__.'../../Redirect.php');
+    $viewsController->save($_SESSION['universityName']);
     Redirect::toHome();
 }
 

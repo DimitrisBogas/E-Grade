@@ -1,9 +1,7 @@
 <?php
-include 'UserTypes.php';
-include 'db/connection/DBSettings.php';
+include_once'db/connection/DBSettings.php';
 
 class UserQueryBuilder {
-    private  $userType;
     private $dbName;
     public function __construct() {
         $db = new DBSettings();

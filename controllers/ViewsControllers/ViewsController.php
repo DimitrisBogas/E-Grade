@@ -7,17 +7,17 @@
  */
 
 
-include(__DIR__.'../../AuthenticationController.php');
-include('AdminViewController.php');
+include_once(__DIR__.'../../AuthenticationController.php');
+include_once(__DIR__.'../../PersistenceController.php');
+
 class ViewsController
 {
     private $authenticationController;
-
+    private $persistenceController;
     public function __construct()  {
         $this->authenticationController = new \controllers\AuthenticationController();
-
+        $this->persistenceController = new \controllers\PersistenceController();
     }
-
     public function invoke($command = null) {
         if(session_name() == "guest" or session_name() == "PHPSESSID") {
             include 'views/authentication/LoginView.php';
@@ -28,15 +28,44 @@ class ViewsController
         } else if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
             if(isset($command)){
                 if($command == "add_university") {
-                    invokeAdminView("addUniversity");
+                    self::invokeAdminView("addUniversity");
                     unset($_SESSION['command']);
                 } else if ($command == "add_department") {
-                    invokeAdminView("addUniversity");
+                    self::invokeAdminView("addUniversity");
                     unset($_SESSION['command']);
                 }
-
-            } else invokeAdminView();
-
+            } else {
+                if(isset($_SESSION['command']))unset($_SESSION['command']);
+                self::invokeAdminView();
+            }
+        }
+    }
+    private function showMainPanelHeader() {
+        echo "
+                <link rel='stylesheet' href='views/css/main-panel.css'>
+                <div class='panel-card'>
+             ";
+    }
+    private function showMainPanelFooter() {
+        echo "</div>";
+    }
+    private function invokeMainPanel($file = null) {
+        self::showMainPanelHeader();
+        if(isset($file)) include($file);
+        self::showMainPanelFooter();
+    }
+    private function invokeAdminView($page = null) {
+        include 'views/template/top-bar.php';
+        if (isset($page)) {
+            if($page == "addUniversity") self::invokeMainPanel('views/users/admin/AddUniversityView.php');
+            if($page == "home") self::invokeMainPanel('views/users/admin/AdminPanelView.php');
+        } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
+        include ('views/authentication/Logout.php');
+    }
+    public function saveFormData($formData) {
+        if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
+            if($_SESSION['universityName']) $this->persistenceController->saveUniversity($_SESSION['universityName']);
+            unset($_SESSION['universityName']);
         }
     }
 

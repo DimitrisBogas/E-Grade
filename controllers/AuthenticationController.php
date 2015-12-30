@@ -8,52 +8,45 @@
 
 namespace controllers;
 
-use UserQueryBuilder;
-
 include_once('SessionController.php');
-include ('db/orm/QueryBuilder/UserQueryBuilder.php');
-include_once(__DIR__.'../../db/orm/DBConnection.php');
+include_once('PersistenceController.php');
+include_once('db/orm/QueryBuilder/UserTypes.php');
 
 class AuthenticationController
 {
-    private $userQueryBuilder;
-    private $dBConnection;
     private $sessionController;
+    private $persistenceController;
     public function __construct() {
-        $this->userQueryBuilder = new UserQueryBuilder();
         $this->sessionController = new SessionController();
-        $this->dBConnection = new \DBConnection();
+        $this->persistenceController = new PersistenceController();
         if (( isset($_SESSION['username']) && isset($_SESSION['password'])  )) {
-                if(self::isValidUser())  {
-                    self::setSessionType();
-                    $result = $this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password']);
-                    $result = $this->dBConnection->query($result);
-                } else {
+                if(self::isValidUser())   self::setSessionType();
+                else {
                     $this->sessionController->startGuestSession();
                      array_push($_SESSION['errors'], "Wrong credentials");
                 }
-
         } else $this->sessionController->startGuestSession();
     }
-    public function isValidUser($userType = NULL) {
-        if(( isset($_SESSION['username']) && isset($_SESSION['password'])  )) {
+    public function isValidUser($userType = null, $username = null, $password = null) {
+        if(!($username or $password) && ($_SESSION['username'] or $_SESSION['password']) ) {
+            $username = $_SESSION['username'];
+            $password = $_SESSION['password'];
+        }
+        if(( isset($username) && isset($password)  )) {
             if (empty($userType)) $userType = null;
-            $user = self::retrieveUserFromPersistence();
+            $user = $this->persistenceController->retrieveUser($username, $password);
             if (empty($userType)) {
-                if (($user['username'] == $_SESSION['username'] && $user['password'] == $_SESSION['password'])) return true;
+                if (($user['username'] == $username && $user['password'] == $password)) return true;
                 else return false;
             }
             else if (!empty($userType)) {
-                if (($user['username']==$_SESSION['username'] && $user['password'] == $_SESSION['password'] && $userType == $user['userType'] )) return true;
+                if (($user['username']==$username && $user['password'] == $password && $userType == $user['userType'] )) return true;
                 else return false;
             }
         } else return false;
-        }
-    private function retrieveUserFromPersistence() {
-        return(mysql_fetch_assoc($this->dBConnection->query($this->userQueryBuilder->login($_SESSION['username'], $_SESSION['password']))));
     }
     private function setSessionType() {
-        $user = self::retrieveUserFromPersistence();
+        $user = $this->persistenceController->retrieveUser($_SESSION['username'], $_SESSION['password']);
         if($user['userType'] == \UserTypes::student()) $this->sessionController->startStudentSession();
         if($user['userType'] == \UserTypes::secretariat()) $this->sessionController->startSecretariatSession();
         if($user['userType'] == \UserTypes::administrator()) $this->sessionController->startAdministratorSession();
