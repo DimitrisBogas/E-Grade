@@ -11,7 +11,8 @@
 //use db\orm\QueryBuilder\InstitutionQueryBuilder;
 
 include_once('db/orm/QueryBuilder/UserQueryBuilder.php');
-include_once(__DIR__.'../../db/orm/QueryBuilder/InstitutionQueryBuilder.php');
+include_once('db/orm/QueryBuilder/InstitutionQueryBuilder.php');
+//include_once(__DIR__.'../../db/orm/QueryBuilder/InstitutionQueryBuilder.php');
 include_once(__DIR__.'../../db/orm/DBConnection.php');
 
 class PersistenceController
@@ -30,6 +31,7 @@ class PersistenceController
     }
 
     public function saveUniversity($universityName) {
+        $_SESSION['e'] = "";
         $_SESSION['e'] = $this->institutionQueryBuilder->createUniversity($universityName);
         $this->dBConnection->query($this->institutionQueryBuilder->createUniversity($universityName));
     }

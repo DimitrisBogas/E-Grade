@@ -15,13 +15,13 @@ class InstitutionQueryBuilder
 {
     private $dbName;
     public function __construct() {
-        $d = new \DBSettings();
-        $db = new DBSettings();
+      //  $d = new \DBSettings();
+        $db = new \DBSettings();
         $dbSettings = $db->getDbSettings();
         $this->dbName = $dbSettings->dbName;
     }
     public function createUniversity($universityName) {
-        return ("INSERT INTO $this->dbName.departments (id, departmentName) VALUES ('$universityName'". ")");
+        return ("INSERT INTO $this->dbName.universities (id, universityName) VALUES ( '$universityName')");
     }
     public function createDepartment() {
 
