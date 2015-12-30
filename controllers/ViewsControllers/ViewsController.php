@@ -15,8 +15,8 @@ class ViewsController
     private $authenticationController;
     private $persistenceController;
     public function __construct()  {
-        $this->authenticationController = new \controllers\AuthenticationController();
-        $this->persistenceController = new \controllers\PersistenceController();
+        $this->authenticationController = new \AuthenticationController();
+        $this->persistenceController = new \PersistenceController();
     }
     public function invoke($command = null) {
         if(session_name() == "guest" or session_name() == "PHPSESSID") {

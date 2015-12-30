@@ -11,7 +11,7 @@ if (!(isset($_POST['universityName']))) {
     $_POST['universityName'] = "u";
 } else {
     $_SESSION['universityName'] = $_POST['universityName'];
-    $viewsController->save($_SESSION['universityName']);
+    $viewsController->saveFormData($_SESSION['universityName']);
     Redirect::toHome();
 }
 

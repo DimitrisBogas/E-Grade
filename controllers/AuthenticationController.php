@@ -6,10 +6,10 @@
  * Time: 5:03 πμ
  */
 
-namespace controllers;
+//namespace controllers;
 
-include_once('SessionController.php');
-include_once('PersistenceController.php');
+include_once(__DIR__.'/SessionController.php');
+include_once(__DIR__.'/PersistenceController.php');
 include_once('db/orm/QueryBuilder/UserTypes.php');
 
 class AuthenticationController
@@ -17,7 +17,8 @@ class AuthenticationController
     private $sessionController;
     private $persistenceController;
     public function __construct() {
-        $this->sessionController = new SessionController();
+        //$s = new PersistenceController();
+        $this->sessionController = new \controllers\SessionController();
         $this->persistenceController = new PersistenceController();
         if (( isset($_SESSION['username']) && isset($_SESSION['password'])  )) {
                 if(self::isValidUser())   self::setSessionType();

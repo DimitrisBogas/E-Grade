@@ -6,12 +6,12 @@
  * Time: 9:10 πμ
  */
 
-namespace controllers;
+//namespace controllers;
 
-use db\orm\QueryBuilder\InstitutionQueryBuilder;
+//use db\orm\QueryBuilder\InstitutionQueryBuilder;
 
 include_once('db/orm/QueryBuilder/UserQueryBuilder.php');
-include_once('db/orm/QueryBuilder/InstitutionQueryBuilder.php');
+include_once(__DIR__.'../../db/orm/QueryBuilder/InstitutionQueryBuilder.php');
 include_once(__DIR__.'../../db/orm/DBConnection.php');
 
 class PersistenceController
@@ -20,8 +20,9 @@ class PersistenceController
     private $userQueryBuilder;
     private $institutionQueryBuilder;
     public function __construct() {
-        $this->dBConnection = new \DBConnection();
+        $this->dBConnection = new DBConnection();
         $this->userQueryBuilder = new \UserQueryBuilder();
+        $u = new \UserQueryBuilder();
         $this->institutionQueryBuilder = new InstitutionQueryBuilder();
     }
     public function retrieveUser($username, $password) {
@@ -29,7 +30,8 @@ class PersistenceController
     }
 
     public function saveUniversity($universityName) {
-        $this->institutionQueryBuilder->createUniversity($universityName);
+        $_SESSION['e'] = $this->institutionQueryBuilder->createUniversity($universityName);
+        $this->dBConnection->query($this->institutionQueryBuilder->createUniversity($universityName));
     }
 
 
