@@ -62,10 +62,12 @@ class ViewsController
         } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
         include ('views/authentication/Logout.php');
     }
-    public function saveFormData($formData) {
+    public function saveFormData() {
         if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
+            $this->persistenceController->saveUniversity("H");
+            $this->persistenceController->saveUniversity($_SESSION['universityName']);
             if($_SESSION['universityName']) $this->persistenceController->saveUniversity($_SESSION['universityName']);
-            unset($_SESSION['universityName']);
+            if($this->persistenceController->saveUniversity($_SESSION['universityName'])) unset($_SESSION['universityName']);
         }
     }
 

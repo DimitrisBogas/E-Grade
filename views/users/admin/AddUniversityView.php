@@ -6,14 +6,23 @@
 <input type="submit"  name="addUniversity" class="button" value="Add a University">
 </form>
 <?php
+//$this->saveFormData();
 include_once(__DIR__.'../../../Redirect.php');
-if (!(isset($_POST['universityName']))) {
-    $_POST['universityName'] = "u";
-} else {
+if (isset($_POST['universityName'])) {
     $_SESSION['universityName'] = $_POST['universityName'];
-    $viewsController->saveFormData($_SESSION['universityName']);
+      $_SESSION['universityName'] ='fm';
+    unserialize($_POST);
+    $this->saveFormData();
+    //  $_SESSION['universityName'] ='fm';
     Redirect::toHome();
-}
 
+
+
+
+
+}
+else {
+    $_SESSION['universityName'] = "u";
+}
 
 ?>

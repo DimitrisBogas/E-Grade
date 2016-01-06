@@ -21,7 +21,7 @@ class InstitutionQueryBuilder
         $this->dbName = $dbSettings->dbName;
     }
     public function createUniversity($universityName) {
-        return ("INSERT INTO $this->dbName.universities (id, universityName) VALUES ( '$universityName')");
+        return ("INSERT INTO $this->dbName.universities (name) VALUES ('$universityName')");
     }
     public function createDepartment() {
 

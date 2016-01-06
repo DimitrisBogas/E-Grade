@@ -31,9 +31,8 @@ class PersistenceController
     }
 
     public function saveUniversity($universityName) {
-        $_SESSION['e'] = "";
-        $_SESSION['e'] = $this->institutionQueryBuilder->createUniversity($universityName);
-        $this->dBConnection->query($this->institutionQueryBuilder->createUniversity($universityName));
+        if ($this->dBConnection->query($this->institutionQueryBuilder->createUniversity($universityName))) return true;
+        else return false;
     }
 
 

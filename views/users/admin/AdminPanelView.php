@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="views/css/AdminButton.css">
 <a> <?php if(isset($_SESSION['universityName'])) echo $_SESSION['universityName'];
 
-    if($_SESSION['e']) echo $_SESSION['e'];?> </a>
+   ?> </a>
 <input type="submit"  name="addUniversity" class="button" value="Add a University" onclick="location.href='?c=add_university'"> </br>
 <input type="submit"  name="addDepartment" class="button" value="Add a Department" onclick="location.href='?c=add_department'">
 <?php
