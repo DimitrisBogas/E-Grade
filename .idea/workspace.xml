@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="346681e1-e47c-4750-9256-1dd3ab809978" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Redirect.php" afterPath="$PROJECT_DIR$/views/Redirect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" afterPath="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template/page/header.php" afterPath="$PROJECT_DIR$/views/template/page/header.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +48,7 @@
       <file leaf-file-name="ViewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.596153">
+            <state vertical-scroll-proportion="-13.269231">
               <caret line="66" column="82" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="85" />
               <folding>
                 <marker date="1452187792323" expanded="true" signature="1925:1939" placeholder="..." />
@@ -61,28 +60,28 @@
       <file leaf-file-name="AddUniversityView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/users/admin/AddUniversityView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.326923">
-              <caret line="15" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
+            <state vertical-scroll-proportion="-5.769231">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Redirect.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/template/page/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.39335665">
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Redirect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Redirect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15734266">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/authentication/Logout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state vertical-scroll-proportion="-3.125">
+              <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -232,7 +231,6 @@
         <option value="$PROJECT_DIR$/controllers/AuthenticationController.php" />
         <option value="$PROJECT_DIR$/views/users/admin/AdminPanelView.php" />
         <option value="$PROJECT_DIR$/controllers/PersistenceController.php" />
-        <option value="$PROJECT_DIR$/views/template/page/header.php" />
         <option value="$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php" />
         <option value="$PROJECT_DIR$/views/users/admin/p.php" />
         <option value="$PROJECT_DIR$/views/authentication/LoginView.php" />
@@ -240,6 +238,7 @@
         <option value="$PROJECT_DIR$/db/orm/QueryBuilder/InstitutionQueryBuilder.php" />
         <option value="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" />
         <option value="$PROJECT_DIR$/views/Redirect.php" />
+        <option value="$PROJECT_DIR$/views/template/page/header.php" />
       </list>
     </option>
   </component>
@@ -782,7 +781,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452203486738</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="enabled output buffering">
+      <created>1452203779336</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1452203779336</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -864,7 +869,8 @@
     <MESSAGE value="changes" />
     <MESSAGE value="add universities feature" />
     <MESSAGE value="db merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="db merge" />
+    <MESSAGE value="enabled output buffering" />
+    <option name="LAST_COMMIT_MESSAGE" value="enabled output buffering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1201,26 +1207,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/template/page/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/authentication/Logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/users/admin/AdminPanelView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1230,16 +1220,6 @@
         <state vertical-scroll-proportion="-16.875">
           <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.596153">
-          <caret line="66" column="82" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="85" />
-          <folding>
-            <marker date="1452187792323" expanded="true" signature="1925:1939" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,18 +1264,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/users/admin/AdminPanelView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.269231">
+          <caret line="66" column="82" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="85" />
+          <folding>
+            <marker date="1452187792323" expanded="true" signature="1925:1939" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/users/admin/AddUniversityView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.326923">
-          <caret line="15" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
+        <state vertical-scroll-proportion="-5.769231">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Redirect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15734266">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/template/page/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39335665">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding />
         </state>
       </provider>
