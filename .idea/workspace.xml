@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="346681e1-e47c-4750-9256-1dd3ab809978" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orm/QueryBuilder/InstitutionQueryBuilder.php" afterPath="$PROJECT_DIR$/db/orm/QueryBuilder/InstitutionQueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" afterPath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Redirect.php" afterPath="$PROJECT_DIR$/views/Redirect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" afterPath="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,20 +61,18 @@
       <file leaf-file-name="AddUniversityView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/users/admin/AddUniversityView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5961537">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <marker date="1452198909720" expanded="true" signature="465:515" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-4.326923">
+              <caret line="15" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Redirect.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Redirect.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/Redirect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.15734266">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -90,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserQueryBuilder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserQueryBuilder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3339161">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state vertical-scroll-proportion="-10.458333">
+              <caret line="19" column="72" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
               <folding>
                 <marker date="1452202935031" expanded="true" signature="335:470" placeholder="INSERT INTO ${$this-&gt;dbName}.users... " />
                 <marker date="1452202935031" expanded="true" signature="553:684" placeholder="INSERT INTO ${$this-&gt;dbName}.users... " />
@@ -222,7 +220,6 @@
         <option value="$PROJECT_DIR$/views/users/admin/AdminView.php" />
         <option value="$PROJECT_DIR$/controllers/ViewsController.php" />
         <option value="$PROJECT_DIR$/views/index-page.php" />
-        <option value="$PROJECT_DIR$/views/Redirect.php" />
         <option value="$PROJECT_DIR$/views/css/addUniversity.css" />
         <option value="$PROJECT_DIR$/views/css/input-boxes.css" />
         <option value="$PROJECT_DIR$/views/css/AddUniversity.css" />
@@ -238,10 +235,11 @@
         <option value="$PROJECT_DIR$/views/template/page/header.php" />
         <option value="$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php" />
         <option value="$PROJECT_DIR$/views/users/admin/p.php" />
-        <option value="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" />
         <option value="$PROJECT_DIR$/views/authentication/LoginView.php" />
         <option value="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" />
         <option value="$PROJECT_DIR$/db/orm/QueryBuilder/InstitutionQueryBuilder.php" />
+        <option value="$PROJECT_DIR$/views/users/admin/AddUniversityView.php" />
+        <option value="$PROJECT_DIR$/views/Redirect.php" />
       </list>
     </option>
   </component>
@@ -778,7 +776,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452199326034</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="db merge">
+      <created>1452203486738</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1452203486738</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -786,7 +790,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22311397" sideWeight="0.5030349" order="7" side_tool="true" content_ui="tabs" />
@@ -859,7 +863,8 @@
     <MESSAGE value="changes in namespaces" />
     <MESSAGE value="changes" />
     <MESSAGE value="add universities feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="add universities feature" />
+    <MESSAGE value="db merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="db merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1220,24 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Redirect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/users/admin/AddUniversityView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5961537">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1452198909720" expanded="true" signature="465:515" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/authentication/LoginView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.875">
@@ -1284,8 +1271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3339161">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        <state vertical-scroll-proportion="-10.458333">
+          <caret line="19" column="72" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
           <folding>
             <marker date="1452202935031" expanded="true" signature="335:470" placeholder="INSERT INTO ${$this-&gt;dbName}.users... " />
             <marker date="1452202935031" expanded="true" signature="553:684" placeholder="INSERT INTO ${$this-&gt;dbName}.users... " />
@@ -1294,6 +1281,22 @@
             <marker date="1452202935031" expanded="true" signature="1198:1232" placeholder="select * fro... users" />
             <marker date="1452202935031" expanded="true" signature="1313:1408" placeholder="SELECT * fro... users" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/users/admin/AddUniversityView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.326923">
+          <caret line="15" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Redirect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15734266">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -14,6 +14,8 @@
         $_SESSION['universityName'] = $_POST['uni'];
         unset($_POST);
         $this->saveFormData();
+        ob_start();
         header("Refresh:0");
+        ob_end_flush();
     }
 ?>
