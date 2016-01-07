@@ -2,27 +2,18 @@
 <link rel="stylesheet" href="views/css/AdminButton.css">
 <link rel="stylesheet" href="views/css/AddUniversity.css">
 <form action=""  method="post">
-<input type="text" name="universityName" id="universityName"  class="universityName topBorder" placeholder="University Name">
-<input type="submit"  name="addUniversity" class="button" value="Add a University">
+    <input type="text" name="uni"  class="universityName topBorder" placeholder="University Name">
+    <input type="submit"  name="addUniversity" class="button" value="Add a University">
 </form>
+
 <?php
-//$this->saveFormData();
-include_once(__DIR__.'../../../Redirect.php');
-if (isset($_POST['universityName'])) {
-    $_SESSION['universityName'] = $_POST['universityName'];
-      $_SESSION['universityName'] ='fm';
-    unserialize($_POST);
-    $this->saveFormData();
-    //  $_SESSION['universityName'] ='fm';
-    Redirect::toHome();
-
-
-
-
-
-}
-else {
-    $_SESSION['universityName'] = "u";
-}
-
+    if ((!isset($_POST["uni"])) or empty($_POST['uni'])) {
+        $_POST["uni"] = "i";
+        exit();
+    } else {
+        $_SESSION['universityName'] = $_POST['uni'];
+        unset($_POST);
+        $this->saveFormData();
+        header("Refresh:0");
+    }
 ?>
