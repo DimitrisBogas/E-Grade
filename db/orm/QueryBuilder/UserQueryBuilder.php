@@ -30,7 +30,7 @@ class UserQueryBuilder {
 
     public function login($username, $password)
     {
-        return("SELECT * from $this->dbName.users  where username like '$username' AND password like '$password' ");
+        return("SELECT * from $this->dbName.user  where username like '$username' AND password like '$password' ");
     }
 
 
