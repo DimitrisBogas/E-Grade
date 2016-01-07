@@ -51,7 +51,7 @@ class ViewsController
     }
     private function invokeMainPanel($file = null) {
         self::showMainPanelHeader();
-        if(isset($file)) include($file);
+        if(isset($file)) include_once($file);
         self::showMainPanelFooter();
     }
     private function invokeAdminView($page = null) {
@@ -64,9 +64,6 @@ class ViewsController
     }
     public function saveFormData() {
         if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
-            $this->persistenceController->saveUniversity("H");
-            $this->persistenceController->saveUniversity($_SESSION['universityName']);
-            if($_SESSION['universityName']) $this->persistenceController->saveUniversity($_SESSION['universityName']);
             if($this->persistenceController->saveUniversity($_SESSION['universityName'])) unset($_SESSION['universityName']);
         }
     }
