@@ -39,6 +39,10 @@ class PersistenceController
         else return false;
 
     }
+    public function  saveCourse($courseName) {
+        if ($this->dBConnection->query($this->institutionQueryBuilder->createCourse($courseName))) return true;
+        else return false;
+    }
     public function getAllUniversities() {
         return $this->dBConnection->query($this->institutionQueryBuilder->getAllUniversities());
     }
