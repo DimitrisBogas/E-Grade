@@ -46,6 +46,10 @@ class PersistenceController
     public function getAllUniversities() {
         return $this->dBConnection->query($this->institutionQueryBuilder->getAllUniversities());
     }
+    public function getAllDepartmentStudents($departmentId) {
+        return $this->dBConnection->query($this->userQueryBuilder->selectAllDepartmentStudents($departmentId));
+
+    }
 
 
 }

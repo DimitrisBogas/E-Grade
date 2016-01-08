@@ -18,11 +18,16 @@ class ViewsController
                 self::invokeStudentView($command);
         } else if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
                 self::invokeSecretariatView($command);
+        }   if (session_name() == UserTypes::professor() && $this->authenticationController->isValidUser(UserTypes::professor())) {
+            self::invokeProfessorView();
         } else if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
                 self::invokeAdministratorView($command);
         }
     }
-    //private function invoke
+    private function invokeProfessorView() {
+        self::invokeUserView("", UserTypes::professor());
+
+    }
     private function invokeStudentView($command) {
         include 'views/users/student/StudentView.php';
     }
@@ -76,8 +81,14 @@ class ViewsController
         if (isset($page)) {
             if($userType ==  UserTypes::administrator()) self::invokeAdminPages($page);
             if($userType == UserTypes::secretariat()) self::invokeSecretaryPages($page);
+            if($userType == UserTypes::professor()) self::invokeProfessorPage();
+
         } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
 
+    }
+
+    private function invokeProfessorPage() {
+        self::invokeMainPanel('views/users/professor/ProfessorPanelView.php');
     }
     private function invokeSecretaryPages($page) {
         if($page == "addStudent") self::invokeMainPanel('views/users/secretary/SecretaryAddStudentView.php');
@@ -130,6 +141,10 @@ class ViewsController
                 unset($_SESSION['professorPassword']);
             }
         }
+    }
+
+    public function showAllDepartmentStudents($departmentId) {
+        return $this->persistenceController->getAllDepartmentStudents($departmentId);
     }
     public function showAllUniversities() {
         return $this->persistenceController->getAllUniversities();

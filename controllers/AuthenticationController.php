@@ -40,6 +40,7 @@ class AuthenticationController
     private function setSessionType() {
         $user = $this->persistenceController->retrieveUser($_SESSION['username'], $_SESSION['password']);
         if($user['userType'] == \UserTypes::student()) $this->sessionController->startStudentSession();
+        if($user['userType'] == \UserTypes::professor()) $this->sessionController->startProfessorSession();
         if($user['userType'] == \UserTypes::secretariat()) $this->sessionController->startSecretariatSession();
         if($user['userType'] == \UserTypes::administrator()) $this->sessionController->startAdministratorSession();
     }

@@ -27,6 +27,9 @@ class UserQueryBuilder {
     public function selectAllUsers() {
         return("select * from  $this->dbName.users");
     }
+    public function selectAllDepartmentStudents($departmentId) {
+        return("select * from  $this->dbName.user where departments_departmentId = '$departmentId'   and userType =" .  "'". UserTypes::student(). "'"   );
+    }
 
     public function login($username, $password)
     {

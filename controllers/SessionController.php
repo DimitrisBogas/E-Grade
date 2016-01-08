@@ -21,6 +21,9 @@ class SessionController
     public static function startSecretariatSession() {
         session_name(\UserTypes::secretariat());
     }
+    public static function startProfessorSession() {
+        session_name(\UserTypes::professor());
+    }
     public static function startAdministratorSession() {
         session_name(\UserTypes::administrator());
     }
