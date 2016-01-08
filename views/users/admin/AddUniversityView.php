@@ -9,6 +9,7 @@
 <?php
     if ((!isset($_POST["uni"])) or empty($_POST['uni'])) {
         $_POST["uni"] = "i";
+        if
         exit();
     } else {
         $_SESSION['universityName'] = $_POST['uni'];

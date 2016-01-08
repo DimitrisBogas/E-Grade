@@ -4,9 +4,6 @@
 <?php
 $universities = $this->showAllUniversities();
 ?>
-
-
-
 <form action=""  method="post">
 
     <select name="universityId" class="universityName topBorder">

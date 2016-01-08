@@ -19,14 +19,21 @@ class ViewsController
         } else if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
                 self::invokeSecretariatView($command);
         }   if (session_name() == UserTypes::professor() && $this->authenticationController->isValidUser(UserTypes::professor())) {
-            self::invokeProfessorView();
+            self::invokeProfessorView($command);
         } else if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
                 self::invokeAdministratorView($command);
         }
     }
-    private function invokeProfessorView() {
-        self::invokeUserView("", UserTypes::professor());
-
+    private function invokeProfessorView($command) {
+        if($command) {
+            if ($command == "add_grade") {
+                self::invokeUserView("addGrade", UserTypes::professor());
+                unset($_SESSION['command']);
+            }
+        } else {
+            self::invokeUserView("home", UserTypes::professor());
+            unset($_SESSION['command']);
+        }
     }
     private function invokeStudentView($command) {
         include 'views/users/student/StudentView.php';
@@ -47,6 +54,9 @@ class ViewsController
     }
     private function invokeAdministratorView($command) {
         if(isset($command)){
+            if($command == "go_home") {
+                self::invokeHome('go_home');
+            }
             if($command == "add_university") {
                 self::invokeUserView("addUniversity", UserTypes::administrator());
                 unset($_SESSION['command']);
@@ -59,6 +69,11 @@ class ViewsController
             self::invokeUserView("home", UserTypes::administrator());
         }
 
+    }
+    private function invokeHome() {
+            unset($_POST);
+            unset($GET);
+            self::invoke('go_home');
     }
     private function showMainPanelHeader() {
         echo "
@@ -75,20 +90,19 @@ class ViewsController
         if(isset($file)) include_once($file);
         self::showMainPanelFooter();
     }
-
     private function invokeUserView($page = null, $userType) {
         include 'views/template/top-bar.php';
         if (isset($page)) {
             if($userType ==  UserTypes::administrator()) self::invokeAdminPages($page);
             if($userType == UserTypes::secretariat()) self::invokeSecretaryPages($page);
-            if($userType == UserTypes::professor()) self::invokeProfessorPage();
+            if($userType == UserTypes::professor()) self::invokeProfessorPage($page);
 
         } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
 
     }
-
-    private function invokeProfessorPage() {
-        self::invokeMainPanel('views/users/professor/ProfessorPanelView.php');
+    private function invokeProfessorPage($page) {
+        if($page == "home") self::invokeMainPanel('views/users/professor/ProfessorPanelView.php');
+        if($page == "addGrade") self::invokeMainPanel('views/users/professor/ProfessorAddGradeView.php');
     }
     private function invokeSecretaryPages($page) {
         if($page == "addStudent") self::invokeMainPanel('views/users/secretary/SecretaryAddStudentView.php');
@@ -113,7 +127,6 @@ class ViewsController
                 unset($_SESSION['courseName']);
             }
         }
-
     }
     public function addDepartment() {
         if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
