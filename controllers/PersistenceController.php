@@ -1,19 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 30/12/2015
- * Time: 9:10 πμ
- */
 
-//namespace controllers;
-
-//use db\orm\QueryBuilder\InstitutionQueryBuilder;
-
-include_once('db/orm/QueryBuilder/UserQueryBuilder.php');
-include_once('db/orm/QueryBuilder/InstitutionQueryBuilder.php');
-//include_once(__DIR__.'../../db/orm/QueryBuilder/InstitutionQueryBuilder.php');
-include_once(__DIR__.'../../db/orm/DBConnection.php');
+include_once('/../db/orm/QueryBuilder/UserQueryBuilder.php');
+include_once('/../db/orm/QueryBuilder/InstitutionQueryBuilder.php');
+include_once('/../db/orm/DBConnection.php');
 
 class PersistenceController
 {

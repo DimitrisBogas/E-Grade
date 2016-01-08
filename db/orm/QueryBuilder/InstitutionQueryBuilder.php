@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 30/12/2015
- * Time: 3:29 μμ
- */
-
 //namespace db\orm\QueryBuilder;
 //use namespace db\connection;
 
