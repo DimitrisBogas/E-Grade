@@ -31,7 +31,7 @@ class ViewsController
                     self::invokeAdminView("addUniversity");
                     unset($_SESSION['command']);
                 } else if ($command == "add_department") {
-                    self::invokeAdminView("addUniversity");
+                    self::invokeAdminView("addDepartment");
                     unset($_SESSION['command']);
                 }
             } else {
@@ -58,14 +58,30 @@ class ViewsController
         include 'views/template/top-bar.php';
         if (isset($page)) {
             if($page == "addUniversity") self::invokeMainPanel('views/users/admin/AddUniversityView.php');
+            if($page == "addDepartment") self::invokeMainPanel('views/users/admin/AddDepartmentView.php');
             if($page == "home") self::invokeMainPanel('views/users/admin/AdminPanelView.php');
-        } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
-        include ('views/authentication/Logout.php');
+        } else {
+            self::invokeMainPanel('views/users/admin/AdminPanelView.php');
+            include('views/authentication/Logout.php');
+        }
     }
     public function saveFormData() {
         if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
             if($this->persistenceController->saveUniversity($_SESSION['universityName'])) unset($_SESSION['universityName']);
         }
+    }
+    public function addDepartment() {
+        if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
+            if($this->persistenceController->saveDepartment($_SESSION['universityId'], $_SESSION['departmentName'], $_SESSION['secretariatUsername'],$_SESSION['secretariatPassword'] )) {
+                unset($_SESSION['universityId']);
+                unset($_SESSION['departmentName']);
+                unset($_SESSION['secretariatUsername']);
+                unset($_SESSION['secretariatPassword']);
+            }
+        }
+    }
+    public function showAllUniversities() {
+        return $this->persistenceController->getAllUniversities();
     }
 
 }

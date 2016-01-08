@@ -10,3 +10,30 @@
     padding: 20px;
     text-align: center;
 }
+.departmentName {
+    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+    border: 5px darkblue solid;
+    color: darkblue;
+    margin-left: 8%;
+    margin-right: 10%;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+}
+
+.smallBox {
+    width: 23%;
+    background-color: white;
+    border-radius: 15px;
+    border: 5px darkblue solid;
+    color: darkblue;
+    margin-left: 8%;
+    margin-right: 1%;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+
+
+}

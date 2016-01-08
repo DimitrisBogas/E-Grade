@@ -35,5 +35,14 @@ class PersistenceController
         else return false;
     }
 
+    public function saveDepartment($universityId, $departmentName, $secretariatUsername, $secretariatPassword) {
+        if ($this->dBConnection->query($this->institutionQueryBuilder->createDepartment($universityId,$departmentName)) && $this->dBConnection->query($this->userQueryBuilder->createSecretariat($secretariatUsername,$secretariatPassword, $universityId)) ) return true;
+        else return false;
+    }
+
+    public function getAllUniversities() {
+        return $this->dBConnection->query($this->institutionQueryBuilder->getAllUniversities());
+    }
+
 
 }

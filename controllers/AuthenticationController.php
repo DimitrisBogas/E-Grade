@@ -52,9 +52,6 @@ class AuthenticationController
         if($user['userType'] == \UserTypes::secretariat()) $this->sessionController->startSecretariatSession();
         if($user['userType'] == \UserTypes::administrator()) $this->sessionController->startAdministratorSession();
     }
-    public function display() {
-        echo "";
-    }
     public function logout() {
         $this->sessionController->closeUserSession();
     }

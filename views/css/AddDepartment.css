@@ -1,3 +1,8 @@
+.topBorder {
+    margin-top: 2%;
+
+}
+
 .button {
     color: darkblue;
     border: 2px darkblue solid;
@@ -10,7 +15,7 @@
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
-    padding: 50px;
+    padding: 15px;
     left: 10%;
     right: 10%;
     width: 80%;

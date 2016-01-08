@@ -8,20 +8,20 @@ class UserQueryBuilder {
         $dbSettings = $db->getDbSettings();
         $this->dbName = $dbSettings->dbName;
     }
-    public function createSecretariat($user, $password) {
-        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::secretariat() . "'". ")");
+    public function createSecretariat($username, $password, $departmentId) {
+        return ("INSERT INTO $this->dbName.user (username, password, usertype, departments_departmentId) VALUES ('$username', '$password'," . "'". UserTypes::secretariat() . "'". ", '$departmentId')");
     }
 
     public function createStudent ($user, $password) {
-        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::student() . "'". ")");
+        return ("INSERT INTO $this->dbName.user (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::student() . "'". ")");
     }
 
      public function createProfessor ($user, $password) {
-         return ("INSERT INTO $this->dbName.users  (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::professor() . "'". ")");
+         return ("INSERT INTO $this->dbName.user  (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::professor() . "'". ")");
     }
 
     public function createAdministrator ($user, $password) {
-        return ("INSERT INTO $this->dbName.users (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::administrator() . "'". ")");
+        return ("INSERT INTO $this->dbName.user (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::administrator() . "'". ")");
     }
  
     public function selectAllUsers() {
