@@ -1,15 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 14/12/2015
- * Time: 5:03 πμ
- */
-
-//namespace controllers;
-
-include_once(__DIR__.'/SessionController.php');
-include_once(__DIR__.'/PersistenceController.php');
+include_once('SessionController.php');
+include_once('PersistenceController.php');
 include_once('db/orm/QueryBuilder/UserTypes.php');
 
 class AuthenticationController

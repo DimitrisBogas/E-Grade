@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 17/12/2015
- * Time: 6:06 πμ
- */
 
-
-include_once(__DIR__.'../../AuthenticationController.php');
-include_once(__DIR__.'../../PersistenceController.php');
+include_once('/../AuthenticationController.php');
+include_once('/../PersistenceController.php');
 
 class ViewsController
 {

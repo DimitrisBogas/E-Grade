@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/db/create.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" dialect="H2" />
   </component>
 </project>

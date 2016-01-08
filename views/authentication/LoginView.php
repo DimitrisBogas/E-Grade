@@ -25,7 +25,7 @@ if (!((isset($_POST['username']) && isset($_POST['password'])))) {
 } else {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
-    unserialize($_POST);
+    //unserialize($_POST);
     include(__DIR__.'../../Redirect.php');
     Redirect::toHome();
 }
