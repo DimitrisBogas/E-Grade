@@ -43,13 +43,18 @@ class PersistenceController
         if ($this->dBConnection->query($this->institutionQueryBuilder->createCourse($courseName))) return true;
         else return false;
     }
+    public function saveGrade($studentId, $courseId, $studentGrade) {
+        if ($this->dBConnection->query($this->institutionQueryBuilder->createGrade($studentId, $courseId, $studentGrade))) return true;
+        else return false;
+    }
     public function getAllUniversities() {
         return $this->dBConnection->query($this->institutionQueryBuilder->getAllUniversities());
     }
     public function getAllDepartmentStudents($departmentId) {
         return $this->dBConnection->query($this->userQueryBuilder->selectAllDepartmentStudents($departmentId));
-
     }
-
+    public function getAllCourses() {
+        return $this->dBConnection->query($this->institutionQueryBuilder->selectAllCourses());
+    }
 
 }

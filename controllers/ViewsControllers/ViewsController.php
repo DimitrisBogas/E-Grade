@@ -142,9 +142,20 @@ class ViewsController
             }
         }
     }
-
+    public function addGrade() {
+        if (session_name() == UserTypes::professor() && $this->authenticationController->isValidUser(UserTypes::professor())) {
+            if($this->persistenceController->saveGrade($_SESSION['userId'], $_SESSION['courseId'], $_SESSION['studentGrade'])) {
+                unset($_SESSION['userId']);
+                unset($_SESSION['courseId']);
+                unset($_SESSION['studentGrade']);
+            }
+        }
+    }
     public function showAllDepartmentStudents($departmentId) {
         return $this->persistenceController->getAllDepartmentStudents($departmentId);
+    }
+    public function showAllCourses() {
+        return $this->persistenceController->getAllCourses();
     }
     public function showAllUniversities() {
         return $this->persistenceController->getAllUniversities();
