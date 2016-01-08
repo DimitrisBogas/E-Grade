@@ -16,9 +16,7 @@ if (((!isset($_POST["studentUsername"])) or empty($_POST['studentUsername'])) or
     $_SESSION['studentPassword'] = $_POST["studentPassword"];
     unset($_POST);
     $this->addStudent();
-
     header("Refresh:0");
-   // Redirect::toHome();
 
 }
 ?>
