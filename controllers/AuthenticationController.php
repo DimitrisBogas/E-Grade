@@ -55,5 +55,10 @@ class AuthenticationController
     public function logout() {
         $this->sessionController->closeUserSession();
     }
+    public function getUsersDepartmentId() {
+        $user = $this->persistenceController->retrieveUser($_SESSION['username'], $_SESSION['password']);
+        $_SESSION['userDepartmentId'] = $user['departments_departmentId'];
+        return $user['departments_departmentId'];
 
+    }
 }

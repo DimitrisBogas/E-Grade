@@ -12,8 +12,8 @@ class UserQueryBuilder {
         return ("INSERT INTO $this->dbName.user (username, password, usertype, departments_departmentId) VALUES ('$username', '$password'," . "'". UserTypes::secretariat() . "'". ", '$departmentId')");
     }
 
-    public function createStudent ($user, $password) {
-        return ("INSERT INTO $this->dbName.user (username, password, usertype) VALUES ('$user', '$password'," . "'". UserTypes::student() . "'". ")");
+    public function createStudent ($username, $password, $departmentId) {
+        return ("INSERT INTO $this->dbName.user (username, password, usertype, departments_departmentId) VALUES ('$username', '$password'," . "'". UserTypes::student() . "'"  .", '$departmentId')");
     }
 
      public function createProfessor ($user, $password) {

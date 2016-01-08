@@ -24,19 +24,24 @@ class ViewsController
         } else if (session_name() == UserTypes::student() && $this->authenticationController->isValidUser(UserTypes::student())) {
             include 'views/users/student/StudentView.php';
         } else if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
-            include 'views/users/secretary/SecretaryView.php';
+            if ($command == "add_student") {
+                self::invokeUserView("addStudent", UserTypes::secretariat());
+                unset($_SESSION['command']);
+            }
+            else if ($command == "addProfessor") self::invokeUserView("addProfessor", UserTypes::secretariat());
+            else self::invokeUserView("home", UserTypes::secretariat());
         } else if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
             if(isset($command)){
                 if($command == "add_university") {
-                    self::invokeAdminView("addUniversity");
+                    self::invokeUserView("addUniversity", UserTypes::administrator());
                     unset($_SESSION['command']);
                 } else if ($command == "add_department") {
-                    self::invokeAdminView("addDepartment");
+                    self::invokeUserView("addDepartment", UserTypes::administrator());
                     unset($_SESSION['command']);
                 }
             } else {
                 if(isset($_SESSION['command']))unset($_SESSION['command']);
-                self::invokeAdminView();
+                self::invokeUserView("home", UserTypes::administrator());
             }
         }
     }
@@ -50,20 +55,30 @@ class ViewsController
         echo "</div>";
     }
     private function invokeMainPanel($file = null) {
+        include('views/authentication/Logout.php');
         self::showMainPanelHeader();
         if(isset($file)) include_once($file);
         self::showMainPanelFooter();
     }
-    private function invokeAdminView($page = null) {
+
+    private function invokeUserView($page = null, $userType) {
         include 'views/template/top-bar.php';
         if (isset($page)) {
-            if($page == "addUniversity") self::invokeMainPanel('views/users/admin/AddUniversityView.php');
-            if($page == "addDepartment") self::invokeMainPanel('views/users/admin/AddDepartmentView.php');
-            if($page == "home") self::invokeMainPanel('views/users/admin/AdminPanelView.php');
-        } else {
-            self::invokeMainPanel('views/users/admin/AdminPanelView.php');
-            include('views/authentication/Logout.php');
-        }
+            if($userType ==  UserTypes::administrator()) self::invokeAdminPages($page);
+            if($userType == UserTypes::secretariat()) self::invokeSecretaryPages($page);
+        } else self::invokeMainPanel('views/users/admin/AdminPanelView.php');
+
+    }
+    private function invokeSecretaryPages($page) {
+        if($page == "addStudent") self::invokeMainPanel('views/users/secretary/SecretaryAddStudentView.php');
+        if($page == "addProfessor") self::invokeMainPanel('views/secretary/SecretaryAddProfessorView.php');
+        if($page == "home") self::invokeMainPanel('views/users/secretary/SecretaryPanelView.php');
+
+    }
+    private function invokeAdminPages($page) {
+        if($page == "addUniversity") self::invokeMainPanel('views/users/admin/AddUniversityView.php');
+        if($page == "addDepartment") self::invokeMainPanel('views/users/admin/AddDepartmentView.php');
+        if($page == "home") self::invokeMainPanel('views/users/admin/AdminPanelView.php');
     }
     public function saveFormData() {
         if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
@@ -80,8 +95,21 @@ class ViewsController
             }
         }
     }
+    public  function addStudent() {
+        if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
+            $this->persistenceController->saveStudent("usr", "pwd", "1");
+            if($this->persistenceController->saveStudent($_SESSION['studentUsername'], $_SESSION['studentPassword'], $this->authenticationController->getUsersDepartmentId())) {
+                unset($_SESSION['studentUsername']);
+                unset($_SESSION['studentPassword']);
+
+            }
+        }
+
+    }
     public function showAllUniversities() {
         return $this->persistenceController->getAllUniversities();
     }
-
+    public function getUsersDepartmentId() {
+        return $this->authenticationController->getUsersDepartmentId();
+    }
 }

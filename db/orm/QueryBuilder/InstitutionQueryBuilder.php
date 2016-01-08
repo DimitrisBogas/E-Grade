@@ -26,6 +26,7 @@ class InstitutionQueryBuilder
     public function createDepartment($universityId,  $departmentName) {
         return ("INSERT INTO $this->dbName.department (departmentName, universities_universityId) VALUES ('$departmentName', '$universityId')");
     }
+
     public function  getAllUniversities() {
         return("select * from  $this->dbName.university");
     }

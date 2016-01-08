@@ -40,6 +40,11 @@ class PersistenceController
         else return false;
     }
 
+    public function saveStudent($username, $password, $departmentId) {
+        if ($this->dBConnection->query($this->userQueryBuilder->createStudent($username, $password, $departmentId))) return true;
+        else return false;
+    }
+
     public function getAllUniversities() {
         return $this->dBConnection->query($this->institutionQueryBuilder->getAllUniversities());
     }
