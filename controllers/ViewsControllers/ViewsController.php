@@ -28,7 +28,10 @@ class ViewsController
                 self::invokeUserView("addStudent", UserTypes::secretariat());
                 unset($_SESSION['command']);
             }
-            else if ($command == "addProfessor") self::invokeUserView("addProfessor", UserTypes::secretariat());
+            else if ($command == "add_professor") {
+                self::invokeUserView("addProfessor", UserTypes::secretariat());
+                unset($_SESSION['command']);
+            }
             else self::invokeUserView("home", UserTypes::secretariat());
         } else if (session_name() == UserTypes::administrator() && $this->authenticationController->isValidUser(UserTypes::administrator())) {
             if(isset($command)){
@@ -71,7 +74,7 @@ class ViewsController
     }
     private function invokeSecretaryPages($page) {
         if($page == "addStudent") self::invokeMainPanel('views/users/secretary/SecretaryAddStudentView.php');
-        if($page == "addProfessor") self::invokeMainPanel('views/secretary/SecretaryAddProfessorView.php');
+        if($page == "addProfessor") self::invokeMainPanel('views/users/secretary/SecretaryAddProfessorView.php');
         if($page == "home") self::invokeMainPanel('views/users/secretary/SecretaryPanelView.php');
 
     }
@@ -101,10 +104,16 @@ class ViewsController
             if($this->persistenceController->saveStudent($_SESSION['studentUsername'], $_SESSION['studentPassword'], $this->authenticationController->getUsersDepartmentId())) {
                 unset($_SESSION['studentUsername']);
                 unset($_SESSION['studentPassword']);
-
             }
         }
-
+    }
+    public function addProfessor() {
+        if (session_name() == UserTypes::secretariat() && $this->authenticationController->isValidUser(UserTypes::secretariat())) {
+            if($this->persistenceController->saveProfessor($_SESSION['professorUsername'], $_SESSION['professorPassword'], $this->authenticationController->getUsersDepartmentId())) {
+                unset($_SESSION['professorUsername']);
+                unset($_SESSION['professorPassword']);
+            }
+        }
     }
     public function showAllUniversities() {
         return $this->persistenceController->getAllUniversities();
