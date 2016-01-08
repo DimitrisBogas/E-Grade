@@ -1,5 +1,5 @@
 <?php
-include_once (__DIR__.'./../../connection/DBSettings.php');
+include_once ('/../../connection/DBSettings.php');
 
 class UserQueryBuilder {
     private $dbName;
