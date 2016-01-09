@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="views/css/login.css">
 <script type="text/javascript">
+    $(function(){
+        $(".alert-message").delegate("a.close", "click", function(event) {
+            event.preventDefault();
+            $(this).closest(".alert-message").fadeOut(function(event){
+                $(this).remove();
+            });
+        });
+    });
 </script>
 
     <div class="login-card">

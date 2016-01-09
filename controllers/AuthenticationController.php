@@ -49,8 +49,14 @@ class AuthenticationController
     }
     public function getUsersDepartmentId() {
         $user = $this->persistenceController->retrieveUser($_SESSION['username'], $_SESSION['password']);
+        if(isset($_SESSION['userDepartmentId'])) unset($_SESSION['userDepartmentId']);
         $_SESSION['userDepartmentId'] = $user['departments_departmentId'];
         return $user['departments_departmentId'];
-
+    }
+    public function getUserId() {
+        $user = $this->persistenceController->retrieveUser($_SESSION['username'], $_SESSION['password']);
+        if(isset($_SESSION['userId'])) unset($_SESSION['userId']);
+        $_SESSION['userId'] = $user['userId'];
+        return $user['userId'];
     }
 }

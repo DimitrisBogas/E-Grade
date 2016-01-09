@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>E-Grade</title>
     <link rel="shortcut icon" href="http://clipartbest.com/cliparts/nTE/XdM/nTEXdM7Gc.png"/>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="../../js/login.js" ></script>
+     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="views/css/index.css">
     <link rel="stylesheet" href="views/css/alert-box.css">
     <?php
@@ -17,15 +16,6 @@
         ob_flush();
     ?>
 
-    <script type="text/javascript">
-        $(function(){
-            $(".alert-message").delegate("a.close", "click", function(event) {
-                event.preventDefault();
-                $(this).closest(".alert-message").fadeOut(function(event){
-                    $(this).remove();
-                });
-            });
-        });
-    </script>
+
 </head>
 <body>

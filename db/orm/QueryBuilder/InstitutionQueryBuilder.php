@@ -30,5 +30,4 @@ class InstitutionQueryBuilder
     public function  getAllUniversities() {
         return("select * from  $this->dbName.university");
     }
-
 }
