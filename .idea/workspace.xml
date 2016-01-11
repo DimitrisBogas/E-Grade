@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="346681e1-e47c-4750-9256-1dd3ab809978" name="Default" comment="added logout and correct page redirection">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema/db.mwb" afterPath="$PROJECT_DIR$/db/schema/db.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="346681e1-e47c-4750-9256-1dd3ab809978" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/PersistenceController.php" afterPath="$PROJECT_DIR$/controllers/PersistenceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php" afterPath="$PROJECT_DIR$/controllers/ViewsControllers/ViewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" afterPath="$PROJECT_DIR$/db/orm/QueryBuilder/UserQueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema/create.sql" afterPath="$PROJECT_DIR$/db/schema/create.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema/data.sql" afterPath="$PROJECT_DIR$/db/schema/data.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/AddDepartment.css" afterPath="$PROJECT_DIR$/views/css/AddDepartment.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/input-boxes.css" afterPath="$PROJECT_DIR$/views/css/input-boxes.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users/professor/ProfessorAddGradeView.php" afterPath="$PROJECT_DIR$/views/users/professor/ProfessorAddGradeView.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -677,7 +668,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451146671301</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added professor exam paper upload&#10;creted unique constraint between to grade columns">
+      <created>1452494703774</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1452494703774</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -687,6 +684,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20884146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10622155" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15088283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -695,7 +693,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -754,7 +751,8 @@
     <MESSAGE value="fixed db column name typo&#10;validating user credentials and authenticating users by their type" />
     <MESSAGE value="added some css" />
     <MESSAGE value="added logout and correct page redirection" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logout and correct page redirection" />
+    <MESSAGE value="added professor exam paper upload&#10;creted unique constraint between to grade columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="added professor exam paper upload&#10;creted unique constraint between to grade columns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
