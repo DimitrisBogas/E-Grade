@@ -41,7 +41,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `grade` WRITE;
 /*!40000 ALTER TABLE `grade` DISABLE KEYS */;
-INSERT INTO `grade` VALUES (1,8.7,4,1),(2,8.4,4,2),(3,9,4,3),(4,7,5,1),(5,7.3,5,2),(6,10,5,3);
+INSERT INTO `grade` VALUES (1,8.7,4,1,null),(2,8.4,4,2,null),(3,9,4,3,null),(4,7,5,1,null),(5,7.3,5,2,null),(6,10,5,3,null);
 /*!40000 ALTER TABLE `grade` ENABLE KEYS */;
 UNLOCK TABLES;
 

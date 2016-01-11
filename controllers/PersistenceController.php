@@ -53,4 +53,5 @@ class PersistenceController
     public function getAllGrades($studentId) {
         return $this->dBConnection->query($this->userQueryBuilder->selectAllGrades($studentId));
     }
+
 }

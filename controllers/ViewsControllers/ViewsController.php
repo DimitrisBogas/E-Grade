@@ -24,6 +24,10 @@ class ViewsController
                 self::invokeAdministratorView($command);
         }
     }
+    public function setMaximumUploadFileSize() {
+        ini_set('upload_max_filesize', '25M');
+        ini_set('post_max_size', '25M');
+    }
     private function invokeStudentView() {
         self::invokeUserView("s", UserTypes::student());
     }
@@ -182,6 +186,5 @@ class ViewsController
     }
     public function getUserId() {
         return $this->authenticationController->getUserId();
-
     }
 }

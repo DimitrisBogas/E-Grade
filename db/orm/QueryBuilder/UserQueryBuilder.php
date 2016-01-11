@@ -33,4 +33,5 @@ class UserQueryBuilder {
     public function selectAllGrades($studentId) {
         return("SELECT * from $this->dbName.grade  where users_userId = '$studentId'");
     }
+
 }
